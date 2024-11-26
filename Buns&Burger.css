@@ -1,0 +1,222 @@
+body{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#header{
+    background-color: #a71515;
+    color: #ffedaa;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav a{
+    color: #ffedaa;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition: .2s;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    
+}
+
+nav a:hover{
+    background-color: #ffedaa;
+    color: #a71515;
+    font-weight: bolder;
+}
+
+#logopic{
+    clip-path: circle(45% at center);
+    height: 70px;
+    width: 70px;
+}
+
+#slideshow-pics{
+    margin: 10rem 10rem 10rem 10rem;
+}
+#offers-sect{
+    margin-top: 10rem;
+    color: #a71515;
+}
+#items-heading{
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    color: #a71515;
+    margin-bottom: 2rem;
+}
+
+/* Chat Gpt */
+#menu{
+    display:flex;
+    flex-wrap: wrap;
+    z-index: 100;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.item{
+    width: 300px;
+    border: 1px #ffedaa;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffedaa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 5%;
+}
+
+.menu-items:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item-image {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    background-color: black;
+}
+
+.item-details {
+    padding: 10px;
+}
+
+.item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #a71515;
+}
+
+.item-description {
+    font-size: 1rem;
+    color: #a71515;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-size: 1rem;
+    color: #a71515;
+    margin-bottom: 15px;
+}
+
+.item-button {
+    padding: 10px 10px;
+    background-color: #a71515;
+    color: #ffedaa;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background-color 1s ease;
+}
+
+.item-button:hover {
+    transform: scale(1.1);
+}
+
+footer{
+    margin-top: 10%;
+    background-color: #a71515;
+    justify-items: center;
+    color: #ffedaa;
+}
+
+#mailarea{
+    border: #ffedaa 1px solid;
+    border-radius: 15px;
+    margin: 5% 20% 10% 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mailicon{
+    clip-path: circle(45% at center);
+    width: 40px;
+    height: 40px;
+    margin: 0.2rem 0 0 1rem;
+}
+
+#mail p{
+    text-align: center;
+}
+#mail a{
+    color: #ffedaa;
+    margin-right: 1rem;
+}
+        /* Home page ended */
+/* Items page */
+#product{
+    margin-top: 10%;
+    justify-content: space-between;
+    display: flex;
+}
+#item-sect{
+    width: 70%;
+    height: 30rem;
+    background-color: #ffedaa;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    display: flexbox;
+}
+#item-img img{
+    width: 20rem;
+    height: 30rem;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#item-details{
+    color: #a71515;
+    text-align: center;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* display: grid; */
+}
+#item_detail{
+    margin: 5rem 5rem 5rem 5rem;
+    align-items: center;
+    justify-items: center;
+    /* border: #a71515 2px solid; */
+    border-radius: 20px;
+}
+#item_detail p{
+    color: #a71515;
+    text-align: center;
+    font-stretch: ultra-expanded;
+    font-family: 'sans-serif';
+    font-size: large;
+}
+#item-sect button{
+    background-color: #a71515;
+    color: #ffedaa;
+    padding: 10px 10px;
+    border: #ffedaa;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 1s;
+}
+#item-sect button:hover{
+    transform: scale(1.1);
+}
+.quant_button{
+    color: #a71515;
+}
