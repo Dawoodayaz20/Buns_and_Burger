@@ -117,11 +117,11 @@ nav a:hover{
     color: #ffedaa;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.9rem;
-    transition: background-color 1s ease;
+    transition: 0.7s;
 }
 
 .item-button:hover {
@@ -212,11 +212,14 @@ footer{
     font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.8s;
 }
 #item-sect button:hover{
     transform: scale(1.1);
 }
 .quant_button{
     color: #a71515;
+}
+#prod-button{
+    justify-content: space-between;
 }
