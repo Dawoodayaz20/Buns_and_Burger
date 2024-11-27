@@ -14,3 +14,4 @@ function showSlides() {
     slides[slideindex - 1].style.display = 'block';
     setTimeout(showSlides, 3000) //This will call the function after every 3sec
 }
+

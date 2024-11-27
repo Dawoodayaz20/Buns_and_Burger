@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buns&Burgers</title>
     <link rel="stylesheet" href="Buns&Burger.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <header id="header">
         <img id="logopic" class="logo" src="BUNS & Burger.png">
         <h1>Buns and Burgers</h1>
+        <div class="cart_icon">
+            <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
         <nav id="navbar">
         <a class="home" href="#Buns&Burger.html" onclick="location.href='Buns&Burger.html'">Home</a>
         <a class="menu" href="#menu">Menu</a>
@@ -34,53 +38,58 @@
 
 <!-- Products Menu -->
         <section id="menu">
-        <div class="item">
+        <div class="item" id="1">
             <img src="Zing Burger.jpg" class="item-image">
             <div class="item-details">
               <h2 class="item-title">Zinger Burger</h2>
               <p class="item-description"></p>
               <p class="item-price">Rs.800</p>
               <button class="item-button" onclick="location.href='item.html'">Order Now</button>
+              <button class="item-button" onclick="location.href='Cart.html'">Add to Cart</button>
             </div>
         </div>
 
-        <div class="item">
+        <div class="item" id="2">
             <img src="Mega Zing Burger.jpg" class="item-image">
             <div class="item-details">
               <h2 class="item-title">Mega Zinger Burger</h2>
               <p class="item-description"></p>
               <p class="item-price">Rs.1000</p>
               <button class="item-button">Order Now</button>
+              <button class="item-button" onclick="location.href='Cart.html'">Add to Cart</button>
             </div>
         </div>
 
-        <div class="item">
+        <div class="item" id="3">
             <img src="Smash Zing Burger.webp" class="item-image">
             <div class="item-details">
               <h2 class="item-title">Smash Zinger Burger</h2>
               <p class="item-description"></p>
               <p class="item-price">Rs.1000</p>
               <button class="item-button">Order Now</button>
+              <button class="item-button" onclick="location.href='Cart.html'">Add to Cart</button>
             </div>
         </div>
 
-        <div class="item">
+        <div class="item" id="4">
             <img src="Libertine Burger.jpg" class="item-image">
             <div class="item-details">
               <h2 class="item-title">Libertine Burger</h2>
               <p class="item-description"></p>
               <p class="item-price">Rs.1200</p>
               <button class="item-button">Order Now</button>
+              <button class="item-button" onclick="location.href='Cart.html'">Add to Cart</button>
             </div>
         </div>
 
-        <div class="item">
+        <div class="item" id="5">
             <img src="Chile Smash Burgers.jpg" class="item-image">
             <div class="item-details">
               <h2 class="item-title">Chile Smash Burger</h2>
               <p class="item-description"></p>
               <p class="item-price">Rs.1400</p>
               <button class="item-button">Order Now</button>
+              <button class="item-button" onclick="location.href='Cart.html'">Add to Cart</button>
             </div>
         </div>
         </section>

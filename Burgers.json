@@ -1,0 +1,33 @@
+[
+    {
+        "id" : "1",
+        "name" : "Zinger Burger",
+        "price" : "800",
+        "image" : "Zing Burger.jpg"
+    },
+    {
+        "id" : "2",
+        "name" : "Mega Zinger Burger",
+        "price" : "900",
+        "image" : "Mega Zing Burger.jpg"
+    },
+    {
+        "id" : "3",
+        "name" : "Smash Zing Burger",
+        "price" : "1000",
+        "image" : "Smash Zing Burger.webp"
+    },
+    {
+        "id" : "4",
+        "name" : "Libertine Burger",
+        "price" : "1200",
+        "image" : "Smash Zing Burger.jpg"
+    },
+    {
+        "id" : "5",
+        "name" : "Chile Smash Burger",
+        "price" : "1400",
+        "image" : "Chile Smash Burgers.jpg"
+    }
+]
+
