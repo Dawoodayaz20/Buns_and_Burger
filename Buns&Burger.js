@@ -15,3 +15,14 @@ function showSlides() {
     setTimeout(showSlides, 3000) //This will call the function after every 3sec
 }
 
+let cartitems = [];
+let cartTotal = 0;
+function addtocart(itemName, itemPrice) {
+    cart.push({name: itemName, price: itemPrice});
+    
+}
+
+function updateCartDispl() {
+    const cartItemslist = document.getElementById('Custom_cart');
+}
+

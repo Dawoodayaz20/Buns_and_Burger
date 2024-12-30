@@ -233,7 +233,7 @@ footer{
 #prod-button{
     justify-content: space-between;
 }
-                            /* Cart Styling: */
+                                    /* Cart Styling: */
 #cart-sect{
     margin-top: 10rem;
 }
@@ -278,3 +278,5 @@ footer{
 #cart-buttons button:hover{
     transform: scale(1.1);
 }
+
+                        
