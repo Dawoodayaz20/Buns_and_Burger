@@ -46,26 +46,26 @@ const cart = [];
 const jsonString = `{
     "Burgers": [
         {
-            "name": "Cheeseburger",
+            "name": "Zinger Cheeseburger",
             "price": "$5.99",
             "ImgLink": "Zing Burger.jpg",
             "quant": 15
         },
         {
-            "name": "Veggie Burger",
+            "name": "Mega Zinger Burger",
             "price": "$4.99",
-            "ImgLink": "Smash Zing Burger.webp",
+            "ImgLink": "Mega Zing Burger.jpg",
             "quant": 15
         },
         {
-            "name": "Bacon Cheeseburger",
+            "name": "Bacon Zinger Burger",
             "price": "$6.99",
-            "ImgLink": "Zing Burger.jpg",
+            "ImgLink": "Smash Zing Burger.webp",
             "quant": 15
         },{
-            "name": "Mega Zinger Cheeseburger",
+            "name": "Libertine Burger",
             "price": "$7.99",
-            "ImgLink": "Smash Zing Burger.webp",
+            "ImgLink": "Libertine Burger.jpg",
             "quant": 15
         }
     ]
@@ -73,57 +73,30 @@ const jsonString = `{
 
 const Burger = JSON.parse(jsonString);
 
+function addtocart(burgerIndex) {
+    const burger = Burger.Burgers[burgerIndex];
+    if (burger) {
+        cart.push({ name: burger.name, price: burger.price, ImgLink: burger.ImgLink });
+    }
+    else {
+        console.error(`Burger ${burgerIndex} not found!`);
+    }
+    console.log(cart);
+    updateCartDisplay();
+}
+function updateCartDisplay(){
+    const custom_cart = document.getElementById('Custom_cart');
+    if (!custom_cart) {
+        console.error("Element with ID 'Custom_cart' not found");
+        return;
+    }
+    const cartItem = document.createElement('img');
+    cartItem.src = 'Zing Burger.jpg';
+    custom_cart.appendChild(cartItem);
+}
 
-// function updateCartDisplay(){
-//     const custom_cart = document.getElementById('Custom_cart');
-//     const cartItem = document.createElement('img');
-//     cartItem.src = 'Zing Burger.jpg';
-//     custom_cart.appendChild(cartItem);
-// }
-// updateCartDisplay();
-// function updateCartDispl(){
-//     const cartItemsList = document.getElementById('Custom_cart');
-//     if (!cartItemsList) {
-//         console.error('Cart items list not found!');
-//         return;
-//     }
 
-//     cartItemsList.innerHTML = '';
-    
-//     cart.forEach((item) => {
-//         const cartItemDiv = document.createElement('div');
-//         cartItemDiv.className = 'cart-item'
 
-//         const cartItemimg = document.createElement('img');
-//         const burger = Object.values(Burgers).find(b => b.name === item.name);
-//         if (burger) {
-//             cartItemimg.src = burger.ImgLink;
-//             cartItem.className = 'cart-item-img';
-//             cartItemDiv.appendChild(cartItemimg);
-//         }
-//         else {
-//             console.error(`Burger ${item.name} not found!`);
-//         }
-
-//         const cartItemDet = document.createElement('div');
-//         cartItemDet.className = 'cart-item-det';
-
-//         const cartItemName = document.createElement('p');
-//         cartItemName.innerHTML = item.name;
-
-//         const cartItemPrice = document.createElement('p');
-//         cartItemPrice.innerHTML = item.price;
-
-//         cartItemDet.appendChild(cartItemName);
-//         cartItemDet.appendChild(cartItemPrice);
-        
-//         cartItemDiv.appendChild(cartItemDet);
-//         cartItemsList.appendChild(cartItemDiv);
-
-//     });
-// }
-
-// addToCartButton.onclick = addtocart(`${burgerData.name}, ${burgerData.price}`);
 
 function showBurgersinfo() {
     const container = document.getElementById('menu');
