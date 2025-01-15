@@ -42,7 +42,6 @@ function showSlides() {
 }
     
 // New code:
-const cart = [];
 const jsonString = `{
     "Burgers": [
         {
@@ -73,30 +72,23 @@ const jsonString = `{
 
 const Burger = JSON.parse(jsonString);
 
+let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+function saveCartToSessionStorage() {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
 function addtocart(burgerIndex) {
     const burger = Burger.Burgers[burgerIndex];
     if (burger) {
-        cart.push({ name: burger.name, price: burger.price, ImgLink: burger.ImgLink });
+        cart.push({ name: burger.name, price: burger.price, ImgLink: burger.ImgLink});
+        saveCartToSessionStorage();
     }
     else {
-        console.error(`Burger ${burgerIndex} not found!`);
+        console.log(`Burger ${burgerIndex} not found!`);
     }
     console.log(cart);
-    updateCartDisplay();
 }
-function updateCartDisplay(){
-    const custom_cart = document.getElementById('Custom_cart');
-    if (!custom_cart) {
-        console.error("Element with ID 'Custom_cart' not found");
-        return;
-    }
-    const cartItem = document.createElement('img');
-    cartItem.src = 'Zing Burger.jpg';
-    custom_cart.appendChild(cartItem);
-}
-
-
-
 
 function showBurgersinfo() {
     const container = document.getElementById('menu');
@@ -128,7 +120,6 @@ function showBurgersinfo() {
         const addToCartButton = document.createElement('button');
         addToCartButton.className = 'item-button';
         addToCartButton.textContent = 'Add to Cart';
-        // addToCartButton.href = 'cart.html';
         
 
         const buyButton = document.createElement('button');
@@ -151,5 +142,9 @@ function showBurgersinfo() {
         console.log(burgerData);
     }
 }
-showBurgersinfo();
-// console.log(Burger.Burgers[1].name);
+
+// Load cart from sessionStorage on page load and update display
+window.onload = function () {
+    // updateCartDisplay();
+    showBurgersinfo();
+};

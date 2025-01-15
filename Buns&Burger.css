@@ -122,6 +122,7 @@ nav a:hover{
 }
 
 .item-button {
+    margin-right: 0.3rem;
     padding: 10px 10px;
     background-color: #a71515;
     color: #ffedaa;
@@ -132,6 +133,7 @@ nav a:hover{
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: 0.7s;
+    width: 42%;
 }
 
 .item-button:hover {
@@ -247,6 +249,8 @@ footer{
     justify-content: space-between;
     background-color: #ffedaa;
     border-radius: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .cart-item-img{
     width: 70px;
