@@ -253,8 +253,10 @@ footer{
     margin-bottom: 0.5rem;
 }
 .cart-item-img{
-    width: 70px;
-    height: 90px;
+    width: 8rem;
+    height: 7rem;
+    object-fit: contain;
+    background-color: black;
     border-radius: 10px;
     margin-left: 5px;
 }
