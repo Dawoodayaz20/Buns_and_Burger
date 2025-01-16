@@ -23,6 +23,16 @@ export const Burger = JSON.parse(`{
             "price": "$7.99",
             "ImgLink": "Libertine Burger.jpg",
             "quant": 15
+        },{
+            "name": "3 Zingers Deal",
+            "price": "$19.99",
+            "ImgLink": "3Zingerdeal.jpg",
+            "quant": 15
+        },{
+            "name": "4 Zingers Deal",
+            "price": "$24.99",
+            "ImgLink": "4ZingersDeal.jpg",
+            "quant": 15
         }
     ]
 }`);
