@@ -62,6 +62,13 @@ export function addtocart(burgerIndex) {
     console.log(cart);
 }
 
+export function removeItemFromCart(index) {
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1);
+        saveCartToSessionStorage();
+    }
+}
+
 export function updateCartDisplay(){
     const cartSect = document.getElementById('cart-sect');
     if (!cartSect) {
@@ -126,9 +133,13 @@ export function updateCartDisplay(){
         cartSect.appendChild(custom_cart);
         custom_cart.appendChild(cartItemDet);
         custom_cart.appendChild(cartButtons);
+
+        removeButton.addEventListener('click', function() {
+            removeItemFromCart(cart.indexOf(item));
+            updateCartDisplay();
+        });
     })
 }
-
 
 export function showBurgersinfo() {
     const container = document.getElementById('menu');
@@ -182,3 +193,4 @@ export function showBurgersinfo() {
         // console.log(burgerData);
     }
 }
+
