@@ -1,4 +1,4 @@
-import { getCart, updateCartDisplay, removeItemFromCart} from './cart-utils.js';
+import { getCart, updateCartDisplay, removeItemFromCart, BuyNow} from './cart-utils.js';
 
 window.onload = function () {
 updateCartDisplay();

@@ -69,6 +69,15 @@ export function removeItemFromCart(index) {
     }
 }
 
+export function BuyNow(index) {
+    if (index >= 0){
+        alert(`Your ${cart[index].name} Order has been placed!`);
+    }
+    else{
+        console.log('Item not found!');
+    }
+}
+
 export function updateCartDisplay(){
     const cartSect = document.getElementById('cart-sect');
     if (!cartSect) {
@@ -111,6 +120,7 @@ export function updateCartDisplay(){
 
         const quantButton = document.createElement('p');
         quantButton.className = 'quant-button';
+        quantButton.textContent = 'Quantity: ';
         
         const quantInput = document.createElement('input');
         quantInput.type = 'number'; // Set the type attribute
@@ -137,6 +147,9 @@ export function updateCartDisplay(){
         removeButton.addEventListener('click', function() {
             removeItemFromCart(cart.indexOf(item));
             updateCartDisplay();
+        });
+        buyButton.addEventListener('click', function() {
+            BuyNow(cart.indexOf(item));
         });
     })
 }
@@ -193,4 +206,3 @@ export function showBurgersinfo() {
         // console.log(burgerData);
     }
 }
-
