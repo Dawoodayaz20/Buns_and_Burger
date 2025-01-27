@@ -5,49 +5,115 @@ export const Burger = JSON.parse(`{
             "name": "Zinger Cheeseburger",
             "price": "$5.99",
             "ImgLink": "Zing Burger.jpg",
-            "quant": 15
+            "quant": 15,
+            "detail": "The Zinger Cheeseburger is a delicious combination of a Zinger fillet, cheese, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         },
         {
             "name": "Mega Zinger Burger",
             "price": "$4.99",
             "ImgLink": "Mega Zing Burger.jpg",
-            "quant": 15
+            "quant": 15,
+            "detail": "The Mega Zinger Burger is a delicious combination of a Zinger fillet, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         },
         {
             "name": "Bacon Zinger Burger",
             "price": "$6.99",
             "ImgLink": "Smash Zing Burger.webp",
-            "quant": 15
+            "quant": 15,
+            "detail": "The Bacon Zinger Burger is a delicious combination of a Zinger fillet, bacon, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         },{
             "name": "Libertine Burger",
             "price": "$7.99",
             "ImgLink": "Libertine Burger.jpg",
-            "quant": 15
+            "quant": 15,
+            "detail": "The Libertine Burger is a delicious combination of a Zinger fillet, bacon, cheese, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         },{
             "name": "3 Zingers Deal",
             "price": "$19.99",
             "ImgLink": "3Zingerdeal.jpg",
-            "quant": 15
+            "quant": 15,
+            "detail": "The 3 Zingers Deal is a delicious combination of 3 Zinger fillets, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         },{
             "name": "4 Zingers Deal",
             "price": "$24.99",
             "ImgLink": "4ZingersDeal.jpg",
-            "quant": 15
+            "quant": 15,
+            "detail": "The 4 Zingers Deal is a delicious combination of 4 Zinger fillets, lettuce, and mayo all on a seeded bun. It's a burger that's sure to satisfy any hunger."
         }
     ]
 }`);
 
+                            // Home Page functions
 
-export function getCart() {
-    return JSON.parse(sessionStorage.getItem('cart')) || [];
+// slide show pictures function
+let slideindex = 0
+export function showSlides() {
+    let i ;
+    let slides = document.getElementsByClassName('slideshow_pics');
+    for (i=0; i < slides.length; i++){
+        slides[i].style.display = 'none';
+    }
+    slideindex++;
+    if(slideindex > slides.length){
+        slideindex = 1;
+    }
+    slides[slideindex - 1].style.display = 'block';
+    setTimeout(showSlides, 3000) //This will call the function after every 3sec
 }
 
-export function saveCart(cart) {
-    sessionStorage.setItem('cart', JSON.stringify(cart));
-}
+export function showBurgersinfo() {
+    const container = document.getElementById('menu');
+    if (!container) return; // Assuming there's a container with this ID
+    
+    container.innerHTML = ''; // Clear previous content
 
-export function saveCartToSessionStorage() {
-    sessionStorage.setItem('cart', JSON.stringify(cart));
+    for (const burgerIndex in Burger.Burgers) 
+    {
+        const burgerData = Burger.Burgers[burgerIndex];
+
+        const burgerCard = document.createElement('div');
+        burgerCard.className = 'item';
+
+        const burgerImage = document.createElement('img');
+        burgerImage.src = burgerData.ImgLink;
+        burgerImage.className = 'item-image';
+
+        const burgerDet = document.createElement('div'); 
+        burgerDet.className = 'item-details';
+        const burgerTitle = document.createElement('h2');
+        burgerTitle.className = 'item-title';
+        burgerTitle.textContent = burgerData.name;
+
+        const burgerPrice = document.createElement('h2');
+        burgerPrice.className = 'item-price';
+        burgerPrice.textContent = `Price: ${burgerData.price}`;
+
+        const addToCartButton = document.createElement('button');
+        addToCartButton.className = 'item-button';
+        addToCartButton.textContent = 'Add to Cart';
+        
+
+        const buyButton = document.createElement('button');
+        buyButton.className = 'item-button';
+        buyButton.textContent = 'Buy Now';
+
+        burgerCard.appendChild(burgerImage);
+
+        burgerDet.appendChild(burgerTitle);
+        burgerDet.appendChild(burgerPrice);
+        burgerDet.appendChild(addToCartButton);
+        burgerDet.appendChild(buyButton);
+
+        burgerCard.appendChild(burgerDet);
+        container.appendChild(burgerCard);
+
+        addToCartButton.addEventListener('click', function() {
+            addtocart(burgerIndex) // Pass the burgerKey (Burger1, Burger2, etc.)
+        });
+        buyButton.addEventListener('click', function() {
+            BuyNow(burgerIndex);
+        });
+    }
 }
 
 export function addtocart(burgerIndex) {
@@ -62,6 +128,21 @@ export function addtocart(burgerIndex) {
     console.log(cart);
 }
 
+export function getCart() {
+    return JSON.parse(sessionStorage.getItem('cart')) || [];
+}
+
+export function saveCart(cart) {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+export function saveCartToSessionStorage() {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+                                // End of Cart Page functions
+                                
+                                // Cart Page functions :
 export function removeItemFromCart(index) {
     if (index >= 0 && index < cart.length) {
         cart.splice(index, 1);
@@ -152,57 +233,5 @@ export function updateCartDisplay(){
             BuyNow(cart.indexOf(item));
         });
     })
-}
-
-export function showBurgersinfo() {
-    const container = document.getElementById('menu');
-    if (!container) return; // Assuming there's a container with this ID
-    
-    container.innerHTML = ''; // Clear previous content
-
-    for (const burgerIndex in Burger.Burgers) 
-    {
-        const burgerData = Burger.Burgers[burgerIndex];
-
-        const burgerCard = document.createElement('div');
-        burgerCard.className = 'item';
-
-        const burgerImage = document.createElement('img');
-        burgerImage.src = burgerData.ImgLink;
-        burgerImage.className = 'item-image';
-
-        const burgerDet = document.createElement('div'); 
-        burgerDet.className = 'item-details';
-        const burgerTitle = document.createElement('h2');
-        burgerTitle.className = 'item-title';
-        burgerTitle.textContent = burgerData.name;
-
-        const burgerPrice = document.createElement('h2');
-        burgerPrice.className = 'item-price';
-        burgerPrice.textContent = `Price: ${burgerData.price}`;
-
-        const addToCartButton = document.createElement('button');
-        addToCartButton.className = 'item-button';
-        addToCartButton.textContent = 'Add to Cart';
-        
-
-        const buyButton = document.createElement('button');
-        buyButton.className = 'item-button';
-        buyButton.textContent = 'Buy Now';
-
-        burgerCard.appendChild(burgerImage);
-
-        burgerDet.appendChild(burgerTitle);
-        burgerDet.appendChild(burgerPrice);
-        burgerDet.appendChild(addToCartButton);
-        burgerDet.appendChild(buyButton);
-
-        burgerCard.appendChild(burgerDet);
-        container.appendChild(burgerCard);
-
-        addToCartButton.addEventListener('click', function() {
-            addtocart(burgerIndex) // Pass the burgerKey (Burger1, Burger2, etc.)
-        });
-        // console.log(burgerData);
-    }
-}
+}                                
+                                    // End of Cart Page functions

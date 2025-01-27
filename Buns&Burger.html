@@ -10,50 +10,58 @@
 </head>
 <body>
 <header id="header">
-        <img id="logopic" class="logo" src="BUNS & Burger.png">
-        <h1>Buns and Burgers</h1>
-        <div class="cart_icon">
-            <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <nav id="navbar">
-        <a class="home" href="Buns&Burger.html">Home</a>
-        <a class="menu" href="menu.html">Menu</a>
-        <a class="deals" href="deals.html">Hot Deals</a>
-        <a class="about" href="about.html">About Us</a>
+    <img id="logopic" class="logo" src="BUNS & Burger.png">
+    <h1>Buns and Burgers</h1>
+    <div class="cart_icon">
+        <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+    <nav id="navbar">
+    <a class="home" href="Buns&Burger.html">Home</a>
+    <a class="menu" href="menu.html">Menu</a>
+    <a class="deals" href="deals.html">Hot Deals</a>
+    <a class="about" href="about.html">About Us</a>
     </nav>
 </header>
                                     <!-- Home Section -->
-    <section id="home">
-            <div id="offers_sect" style="justify-content: center; align-items: center; text-align: center; margin-top: 10rem; color: #a71515; font-size: x-large;">
-                <h1>Our Hot Menu</h1>
-                <img class="slideshow_pics" src="Mega Zing Burger.jpg" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem">
-                <img class="slideshow_pics" src="Chile Smash Burgers.jpg" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem">
-                <img class="slideshow_pics" src="Smash Zing Burger.webp" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem;">
-            </div>
-    </section>
-
-    <section id="items-sect">
-        <div id="items-heading">
-            <h1>Welcome to Buns and Burgers!</h1>
-            <h2>Where the meat meets Buns</h2>
-        </div>
-    </section>
-
-                                    <!-- Products Menu -->
-    <section id="menu">
-    </section>
-                                    <!-- Footer Section -->
-    <footer id="aboutus">
-        <h2>Email Us!</h2>
-        <div id="mailarea">
-        <img class="mailicon" src="Email-icon.png">
-        <div id="mail">
-            <p><a href="mailto:buns&burger@gmail.com">buns&burger@gmail.com</a></p></div>
-        </div>
+<section id="home">
+    <div id="offers_sect" style="justify-content: center; align-items: center; text-align: center; margin-top: 10rem; color: #a71515; font-size: x-large;">
+        <h1>Our Hot Menu</h1>
+        <img class="slideshow_pics" src="Mega Zing Burger.jpg" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem">
+        <img class="slideshow_pics" src="Chile Smash Burgers.jpg" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem">
+        <img class="slideshow_pics" src="Smash Zing Burger.webp" style="margin: 0rem 10rem 10rem 10rem; width: 80%; height: 50rem;">
     </div>
-    <p>Copyright &#169; 2024 Dawood Ayaz. All Rights Reserved.</p>
+</section>
+
+<section id="items-sect">
+    <div id="items-heading">
+        <h1>Welcome to Buns and Burgers!</h1>
+        <h2>Where the meat meets Buns</h2>
     </div>
-    </footer>
-    <script type="module" src="Buns&Burger.js"></script>
+</section>
+
+                                <!-- Products Menu -->
+<section id="menu">
+</section>
+                                <!-- Footer Section -->
+<footer id="aboutus">
+    <h2>Email Us!</h2>
+    <div id="mailarea">
+    <img class="mailicon" src="Email-icon.png">
+    <div id="mail">
+        <p><a href="mailto:buns&burger@gmail.com">buns&burger@gmail.com</a></p></div>
+    </div>
+</div>
+<p>Copyright &#169; 2024 Dawood Ayaz. All Rights Reserved.</p>
+</div>
+</footer>
+<script type="module">
+import { getCart, saveCartToSessionStorage, addtocart, Burger, showBurgersinfo, showSlides} from './cart-utils.js';
+let cart = getCart();
+
+window.onload = function () {
+    showBurgersinfo();
+    showSlides();
+};
+</script>
 </body>
 </html>
