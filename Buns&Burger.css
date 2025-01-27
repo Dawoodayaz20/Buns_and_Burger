@@ -134,6 +134,7 @@ nav a:hover{
     font-size: 0.9rem;
     transition: 0.7s;
     width: 42%;
+    /* text-decoration: none; */
 }
 
 .item-button:hover {
