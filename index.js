@@ -95,7 +95,7 @@ export function showBurgersinfo() {
 
         const buyButton = document.createElement('button');
         buyButton.className = 'item-button';
-        buyButton.textContent = 'Buy Now';
+        buyButton.textContent = 'Order Now';
 
         burgerCard.appendChild(burgerImage);
 
@@ -111,15 +111,18 @@ export function showBurgersinfo() {
             addtocart(burgerIndex) // Pass the burgerKey (Burger1, Burger2, etc.)
         });
         buyButton.addEventListener('click', function() {
-            BuyNow(burgerIndex);
+            OrderNow(burgerIndex);
         });
     }
+}
+export function OrderNow(indexNum){
+    alert(`Your ${Burger.Burgers[indexNum].name} Order has been placed!`);
 }
 
 export function addtocart(burgerIndex) {
     const burger = Burger.Burgers[burgerIndex];
     if (burger) {
-        cart.push({ name: burger.name, price: burger.price, ImgLink: burger.ImgLink});
+        cart.push({ name: burger.name, price: burger.price, ImgLink: burger.ImgLink,});
         saveCartToSessionStorage();
     }
     else {
@@ -194,31 +197,31 @@ export function updateCartDisplay(){
         cartButtons.id = 'cart-buttons';
 
         const buyButton = document.createElement('button');
-        buyButton.textContent = 'Order Now';
+        buyButton.textContent = 'Buy Now';
 
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove Item';
 
-        const quantButton = document.createElement('p');
-        quantButton.className = 'quant-button';
-        quantButton.textContent = 'Quantity: ';
+        // const quantButton = document.createElement('p');
+        // quantButton.className = 'quant-button';
+        // quantButton.textContent = 'Quantity: ';
         
-        const quantInput = document.createElement('input');
-        quantInput.type = 'number'; // Set the type attribute
-        quantInput.id = 'quantity1'; // Set the id attribute
-        quantInput.name = 'quantity'; // Set the name attribute
-        quantInput.min = '1'; // Set the minimum value
-        quantInput.max = '10'; // Set the maximum value
-        quantInput.value = '0'; // Set the default value
+        // const quantInput = document.createElement('input');
+        // quantInput.type = 'number'; // Set the type attribute
+        // quantInput.id = 'quantity1'; // Set the id attribute
+        // quantInput.name = 'quantity'; // Set the name attribute
+        // quantInput.min = 1; // Set the minimum value
+        // quantInput.max = 10; // Set the maximum value
+        // quantInput.value = 1; // Set the default value
 
-        quantButton.appendChild(quantInput);
+        // quantButton.appendChild(quantInput);
 
         cartButtons.appendChild(buyButton);
         cartButtons.appendChild(removeButton);
         
         cartItemDet.appendChild(cartItemname);
         cartItemDet.appendChild(cartItemPrice);
-        cartItemDet.appendChild(quantButton);
+        // cartItemDet.appendChild(quantButton);
 
         custom_cart.appendChild(cartItem);
         cartSect.appendChild(custom_cart);
