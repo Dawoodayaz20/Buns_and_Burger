@@ -44,7 +44,7 @@ nav a:hover{
 }
 
 #logopic{
-    clip-path: circle(39% at center);
+    clip-path: circle(50% at center);
     height: 70px;
     width: 70px;
 }
